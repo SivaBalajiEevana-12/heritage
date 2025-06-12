@@ -71,7 +71,7 @@ const Navigate =useNavigate();
   const fetchSchools = async () => {
     setIsLoading(true)
     try {
-      const response = await fetch("https://heritage-server.onrender.com/events")
+      const response = await fetch("https://heritage-server-production.up.railway.app/events")
       if (!response.ok) {
         throw new Error("Failed to fetch schools")
       }
@@ -182,7 +182,7 @@ setFilteredSchools(data)
     }
 
     try {
-      const response = await fetch("https://heritage-server.onrender.com/contest/register", {
+      const response = await fetch("https://heritage-server-production.up.railway.app/contest/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

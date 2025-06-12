@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
   console.log("Form submitted:", formData)
 
   try {
-    const response = await fetch("https://heritage-server.onrender.com/school", {
+    const response = await fetch("https://heritage-server-production.up.railway.app/school", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
