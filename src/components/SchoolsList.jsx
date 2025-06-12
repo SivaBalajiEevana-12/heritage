@@ -66,8 +66,8 @@ const SchoolsList = () => {
   const filteredSchools = schools
     ? schools.filter(
         (school) =>
-          school.schoolName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          school.personInCharge.toLowerCase().includes(searchTerm.toLowerCase()),
+          school.schoolName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          school.personInCharge?.toLowerCase().includes(searchTerm.toLowerCase()),
       )
     : []
 
