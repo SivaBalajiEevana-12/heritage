@@ -25,6 +25,8 @@ import {
   Spinner,
   useToast,
 } from "@chakra-ui/react"
+import { useNavigate } from "react-router-dom"
+import images from "./hkm.png"
 
 const ContestRegistrationTable = () => {
   // Initial contest data
@@ -61,7 +63,7 @@ const ContestRegistrationTable = () => {
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const toast = useToast()
-
+const Navigate =useNavigate();
   // Calculate total participants
   const totalParticipants = contests.reduce((sum, contest) => sum + (Number.parseInt(contest.participants) || 0), 0)
 
@@ -207,6 +209,8 @@ setFilteredSchools(data)
       setContests(initialContests)
       setSelectedSchool(null)
       setSearchTerm("")
+        Navigate('/register')
+      
     } catch (error) {
       console.error("Error submitting registration:", error)
       toast({
@@ -237,12 +241,18 @@ setFilteredSchools(data)
     <Container maxW="4xl" py={8}>
       <Card bg={bgColor} shadow="md" borderWidth="1px" borderColor={borderColor}>
         <CardBody p={6}>
-          <Box mb={6}>
+          {/* <Box mb={6}>
             <Text fontSize="sm" color="gray.600" mb={4}>
               ***Please go through the general rules and information given in the Heritage Fest "Poster" carefully
               before filling this form. Clearly mention the number of participants in each contest.
             </Text>
-          </Box>
+          </Box> */}
+          <VStack spacing={4} mb={8}>
+            <Box w="100%" textAlign="center">
+              <img src={images} alt="Hare Krishna Movement Visakhapatnam" style={{ maxWidth: "100%", height: "auto" }} />
+            </Box>
+          </VStack>
+
 
           <form onSubmit={handleSubmit}>
             <VStack spacing={6} align="stretch">
@@ -367,6 +377,13 @@ setFilteredSchools(data)
           </form>
         </CardBody>
       </Card>
+               <Text fontSize="sm" color="gray.600" mt={4} textAlign="center">
+        If not registered?{" "}
+        <Button variant="link" colorScheme="blue" onClick={() => Navigate("/register")}>
+          Click here
+        </Button>{" "}
+        to register your school.
+      </Text>
     </Container>
   )
 }

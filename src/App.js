@@ -20,8 +20,8 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
   <Routes>
-    <Route path='/' element={<HeritageRegistrationForm/>}/>
-    <Route path='/register' element={<ContestRegistrationTable/>}/>
+    <Route path='/register' element={<HeritageRegistrationForm/>}/>
+    <Route path='/' element={<ContestRegistrationTable/>}/>
     <Route path='/events' element={<SchoolsList/>}/>
     <Route path='/registrations/:schoolId' element={<SchoolDetails/>}/>
   </Routes>

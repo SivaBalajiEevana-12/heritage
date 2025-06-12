@@ -19,6 +19,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import {useNavigate} from 'react-router-dom'
+import images from "./hkm.png"
 
 const HeritageRegistrationForm = () => {
   const navigate=useNavigate()
@@ -55,7 +56,7 @@ const handleSubmit = async (e) => {
     const data = await response.json()
 
     if (response.ok) {
-      alert("Registration successful!")
+      // alert("Registration successful!")
       // Optionally reset the form
       setFormData({
         school: "",
@@ -65,7 +66,7 @@ const handleSubmit = async (e) => {
         personInCharge: "",
         phone: "",
       })
-      navigate('/register');
+      // navigate('/register');
     } else {
       alert(`Error: ${data.message}`)
     }
@@ -83,7 +84,7 @@ const handleSubmit = async (e) => {
     <Container maxW="2xl" py={8}>
       <Card bg={bgColor} shadow="lg" borderWidth="1px" borderColor={borderColor}>
         <CardBody p={8}>
-          {/* Header Section */}
+          {/* Header Section 
           <VStack spacing={4} mb={8}>
             <HStack spacing={4} align="center">
               <Box
@@ -125,6 +126,12 @@ const handleSubmit = async (e) => {
               </VStack>
             </HStack>
           </VStack>
+*/}
+<VStack spacing={4} mb={8}>
+  <Box w="100%" textAlign="center">
+    <img src={images} alt="Hare Krishna Movement Visakhapatnam" style={{ maxWidth: "100%", height: "auto" }} />
+  </Box>
+</VStack>
 
           {/* Form Title */}
           <Box border="2px solid" borderColor="gray.400" borderRadius="md" p={3} mb={8} textAlign="center">
@@ -241,13 +248,7 @@ const handleSubmit = async (e) => {
               </Button>
             </VStack>
           </form>
-          <Text fontSize="sm" color="gray.600" mt={4} textAlign="center">
-  Already registered?{" "}
-  <Button variant="link" colorScheme="blue" onClick={() => navigate("/register")}>
-    Click here
-  </Button>{" "}
-  to add participants.
-</Text>
+ 
 
         </CardBody>
       </Card>
