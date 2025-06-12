@@ -69,7 +69,7 @@ const ContestRegistrationTable = () => {
   const fetchSchools = async () => {
     setIsLoading(true)
     try {
-      const response = await fetch("http://localhost:3001/events")
+      const response = await fetch("https://heritage-server.onrender.com/events")
       if (!response.ok) {
         throw new Error("Failed to fetch schools")
       }
@@ -180,7 +180,7 @@ setFilteredSchools(data)
     }
 
     try {
-      const response = await fetch("http://localhost:3001/contest/register", {
+      const response = await fetch("https://heritage-server.onrender.com/contest/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
