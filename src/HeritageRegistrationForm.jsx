@@ -67,7 +67,7 @@ const HeritageRegistrationForm = () => {
     setErrors({})
 
     try {
-      const response = await fetch("https://heritage-server-production.up.railway.app/school", {
+      const response = await fetch("https://heritage-server-389286764509.asia-south1.run.app/school", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
